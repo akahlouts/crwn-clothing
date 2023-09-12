@@ -1,11 +1,16 @@
-import { Fragment, useContext } from "react";
-import { Outlet, Link } from "react-router-dom";
-import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
+import { Fragment } from "react";
+import { Outlet } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+
 import CartIcon from "../../components/CartIcon/CartIcon";
 import CartDropdown from "../../components/CartDropdown/CartDropdown";
-import { UserContext } from "../../contexts/UserContext";
-import { CartContext } from "../../contexts/CartContext";
-import { signOutUser } from "../../utils/Firebase/Firebase";
+
+import { selectIsCartOpen } from "../../store/cart/cart.selector";
+import { selectCurrentUser } from "../../store/user/user.selector";
+
+import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
+import { signOutStart } from "../../store/user/user.action";
+
 import {
   NavigationContainer,
   LogoContainer,
@@ -14,8 +19,11 @@ import {
 } from "./Navigation.styles";
 
 const Navigation = () => {
-  const { currentUser } = useContext(UserContext);
-  const { isCartOpen } = useContext(CartContext);
+  const dispatch = useDispatch();
+  const currentUser = useSelector(selectCurrentUser);
+  const isCartOpen = useSelector(selectIsCartOpen);
+
+  const signOutUser = () => dispatch(signOutStart());
 
   return (
     <Fragment>
