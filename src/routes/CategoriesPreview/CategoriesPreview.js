@@ -6,7 +6,6 @@ import {
   selectCategoriesIsLoading,
 } from "../../store/categories/category.selector";
 
-import "./CategoriesPreview.scss";
 import Spinner from "../../components/Spinner/Spinner";
 
 const CategoriesPreview = () => {
@@ -14,7 +13,7 @@ const CategoriesPreview = () => {
   const isLoading = useSelector(selectCategoriesIsLoading);
 
   return (
-    <div className="containerForTest">
+    <div>
       {isLoading ? (
         <Spinner />
       ) : (

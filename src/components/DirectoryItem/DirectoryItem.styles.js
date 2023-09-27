@@ -9,6 +9,7 @@ export const BackgroundImage = styled.div`
 `;
 
 export const Body = styled.div`
+  width: 150px;
   height: 90px;
   padding: 0 25px;
   display: flex;
@@ -31,12 +32,22 @@ export const Body = styled.div`
   p {
     font-weight: lighter;
     font-size: 16px;
+    margin: 10px 0;
+  }
+
+  @media (max-width: 768px) {
+    width: 110px;
+    height: 65px;
+
+    p {
+      margin: 0;
+    }
   }
 `;
 
 export const DirectoryItemContainer = styled.div`
   min-width: 30%;
-  height: 300px;
+  height: 200px;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
@@ -66,8 +77,17 @@ export const DirectoryItemContainer = styled.div`
     margin-left: 7.5px;
   }
 
-  &:nth-child(4),
-  &:last-child {
-    height: 380px;
+  @media (min-width: 768px) {
+    height: 300px;
+
+    &:nth-child(4),
+    &:last-child {
+      height: 380px;
+    }
+
+    &:last-child ${Body}, &:nth-child(4) ${Body} {
+      width: 200px;
+      height: 120px;
+    }
   }
 `;

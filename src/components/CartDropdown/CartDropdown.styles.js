@@ -23,6 +23,10 @@ export const CartDropdownContainer = styled.div`
   ${InvertedButton} {
     margin-top: auto;
   }
+  @media (max-width: 768px) {
+    top: 70px;
+    right: 20px;
+  }
 `;
 
 export const EmptyMessage = styled.span`

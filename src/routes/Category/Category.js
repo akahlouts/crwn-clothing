@@ -10,7 +10,11 @@ import {
   selectCategoriesIsLoading,
 } from "../../store/categories/category.selector";
 
-import { CategoryTitle, CategoryContainer } from "./Category.styles";
+import {
+  CategoryTitle,
+  CategoryContainer,
+  CategoryBox,
+} from "./Category.styles";
 
 const Category = () => {
   const { category } = useParams();
@@ -20,22 +24,23 @@ const Category = () => {
 
   useEffect(() => {
     setProducts(categoriesMap[category]);
+    window.scrollTo(0, 0);
   }, [category, categoriesMap]);
 
   return (
-    <Fragment>
+    <CategoryContainer>
       <CategoryTitle>{category.toUpperCase()}</CategoryTitle>
       {isLoading ? (
         <Spinner />
       ) : (
-        <CategoryContainer>
+        <CategoryBox>
           {products &&
             products.map((product) => (
               <ProductCrad key={product.id} product={product} />
             ))}
-        </CategoryContainer>
+        </CategoryBox>
       )}
-    </Fragment>
+    </CategoryContainer>
   );
 };
 

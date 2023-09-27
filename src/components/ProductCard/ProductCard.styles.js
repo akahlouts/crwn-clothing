@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const ProductCardContainer = styled.div`
-  width: 100%;
+  width: 22vw;
   display: flex;
   flex-direction: column;
   height: 350px;
   align-items: center;
   position: relative;
+  margin-inline: auto;
 
   img {
     width: 100%;
@@ -22,6 +23,12 @@ export const ProductCardContainer = styled.div`
     position: absolute;
     top: 255px;
     transition: 0.3s opacity;
+
+    @media (max-width: 768px) {
+      opacity: 0.8;
+      min-width: unset;
+      padding: 0 10px;
+    }
   }
 
   &:hover {
@@ -32,6 +39,14 @@ export const ProductCardContainer = styled.div`
     button {
       opacity: 0.85;
     }
+  }
+
+  @media (max-width: 992px) {
+    width: 40vw;
+  }
+
+  @media (max-width: 576px) {
+    width: 100%;
   }
 `;
 

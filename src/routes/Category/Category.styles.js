@@ -1,15 +1,37 @@
 import styled from "styled-components";
 
+export const CategoryContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const CategoryTitle = styled.h2`
   font-size: 38px;
   margin-bottom: 25px;
   text-align: center;
 `;
 
-export const CategoryContainer = styled.div`
+export const CategoryBox = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  column-gap: 10px;
-  row-gap: 50px;
-  margin-bottom: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+
+  & > div {
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px 15px;
+
+    & > div {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 576px) {
+    width: 90%;
+    grid-template-columns: 1fr;
+  }
 `;
