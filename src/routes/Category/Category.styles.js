@@ -7,9 +7,13 @@ export const CategoryContainer = styled.div`
 `;
 
 export const CategoryTitle = styled.h2`
-  font-size: 38px;
+  font-size: 50px;
   margin-bottom: 25px;
   text-align: center;
+
+  @media (max-width: 576px) {
+    font-size: 42px;
+  }
 `;
 
 export const CategoryBox = styled.div`

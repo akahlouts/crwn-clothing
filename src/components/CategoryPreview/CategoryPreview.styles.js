@@ -14,7 +14,7 @@ export const CategoryPreviewContainer = styled.div`
 export const Title = styled(Link)`
   font-size: 38px;
   font-weight: bold;
-  margin: 31.54px auto 25px;
+  margin: 31.54px auto 25px 0;
   cursor: pointer;
   transition: 0.3s;
   width: fit-content;

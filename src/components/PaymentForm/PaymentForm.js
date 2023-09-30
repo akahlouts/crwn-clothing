@@ -23,6 +23,11 @@ const PaymentForm = () => {
   const paymentHandler = async (e) => {
     e.preventDefault();
 
+    // if (!currentUser) {
+    //   alert("you have to sign in");
+    //   return;
+    // }
+
     if (!stripe || !elements) return;
 
     setIsProcessingPayment(true);

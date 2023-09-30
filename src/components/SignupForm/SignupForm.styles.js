@@ -11,5 +11,9 @@ export const SignupContainer = styled.div`
 
   @media (max-width: 576px) {
     width: 300px;
+
+    & form button {
+      margin-inline: auto;
+    }
   }
 `;

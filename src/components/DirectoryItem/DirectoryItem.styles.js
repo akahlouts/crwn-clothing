@@ -47,7 +47,7 @@ export const Body = styled.div`
 
 export const DirectoryItemContainer = styled.div`
   min-width: 30%;
-  height: 200px;
+  height: 300px;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
@@ -77,17 +77,17 @@ export const DirectoryItemContainer = styled.div`
     margin-left: 7.5px;
   }
 
-  @media (min-width: 768px) {
-    height: 300px;
+  &:nth-child(4),
+  &:last-child {
+    height: 380px;
+  }
+
+  @media (max-width: 576px) {
+    height: 200px;
 
     &:nth-child(4),
     &:last-child {
-      height: 380px;
-    }
-
-    &:last-child ${Body}, &:nth-child(4) ${Body} {
-      width: 200px;
-      height: 120px;
+      height: 200px;
     }
   }
 `;
