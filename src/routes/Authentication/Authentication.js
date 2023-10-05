@@ -1,9 +1,9 @@
 // import { useEffect } from "react";
 // import { getRedirectResult } from "firebase/auth";
 
-import // auth,
-// signInWithGoogleRedirect,
-"../../utils/Firebase/Firebase";
+// import // auth,
+// // signInWithGoogleRedirect,
+// "../../utils/Firebase/Firebase";
 
 import SignupForm from "../../components/SignupForm/SignupForm";
 import SigninForm from "../../components/SigninForm/SigninForm";
